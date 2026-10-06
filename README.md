@@ -1,9 +1,5 @@
 # daniel skill
 
-基于 Daniel（GitHub [danielfbm](https://github.com/danielfbm)）公开代码与 review 样本整理的实现、重构和代码评审技能。
-
-这是独立整理的非官方技能，与 Daniel 及相关项目没有隶属关系，也未获得其背书。它提炼有公开证据支持的工程方法，不模仿身份，也不声称代表其全部或永久偏好。
-
 ## 关注什么
 
 - 保留已有行为契约，沿调用链检查 diff 外的影响
@@ -44,8 +40,3 @@ git clone https://github.com/hawkli-1994/daniel-skill.git \
 - [references/evidence.md](references/evidence.md)：公开来源、日期、证据强弱与归因限制
 - [references/examples.md](references/examples.md)：本技能编写的教学示例，并非 Daniel 原话或真实代码
 
-## 来源与边界
-
-资料截至 2026-10-06，来自公开 GitHub 评论、PR 和代码。完整出处见 [证据说明](references/evidence.md)，涵盖 tektoncd/cli、tektoncd/pipeline、AlaudaDevops/toolbox、AlaudaDevops/run-actions，以及 danielfbm 的相关仓库。
-
-直接评论、账号发起或整合的代码、以及本技能的归纳建议分别标注。公开协作或 AI 辅助代码不代表每行均由本人手写；项目当前规范和用户的具体要求始终优先。
