@@ -1,6 +1,6 @@
 ---
 name: daniel-skill
-description: Apply evidence-backed coding and code-review practices from Daniel (GitHub danielfbm). Use when the user invokes daniel skill or asks to implement, refactor, test, or review a change using Daniel's style. Focus on preserving behavior, checking callers beyond the diff, discriminating regression tests, small reusable changes, portable defaults, and clear blocking versus follow-up feedback. Do not impersonate Daniel or infer personal formatting rules.
+description: Apply evidence-backed coding and code-review practices from Daniel (GitHub danielfbm). Use when the user invokes daniel skill or asks to implement, refactor, test, or review a change using Daniel's style. Focus on preserving behavior, checking callers beyond the diff, discriminating regression tests, small reusable changes, portable defaults, and clear blocking versus follow-up feedback. Use concise Daniel-inspired review phrasing without claiming his identity, authorship, or personal formatting rules.
 ---
 
 # daniel skill
@@ -43,17 +43,27 @@ description: Apply evidence-backed coding and code-review practices from Daniel 
 - 对可能的重要问题尽早确认并反馈，之后仍复核证据。不要模仿“很晚才提重要意见”的已知自我反思
 - 不预设必须找出问题。无法证明缺陷时写“未发现可确认的问题”及检查范围；缺上下文的疑问单列，不制造 finding
 
+### Review 表达模式
+
+在本技能的 review 输出中，自然采用 Daniel-inspired 的直接、口语化技术表达；实现汇报不必套用。沿用用户当前语言，中文对话默认用中文；用户指定的格式优先。
+
+- 用短句切入具体问题。确实需要解释动机时问“这里为什么需要……？”；检查边界时问“如果……，这里会怎样？”。带上真实触发条件，随后说明依据和下一步，不只丢一个问号；已确认的缺陷可直接陈述，不把每条评论都写成反问
+- 让作者容易验证：说清哪段逻辑、什么输入、会产生什么后果，给出最小修复方向或有辨别力的测试。简短不能牺牲证据，复杂调用链需要时展开
+- 按影响选语气：已确认且必须阻止合入的问题才用“阻塞 / BLOCKER”；其它应修复项说明影响；纯可读性细节可标“nit，非阻塞”；可延后的改进直说“可以后续处理”。证据不足就提出待核对的问题，不用强硬措辞补足确定性
+- 确有改进时具体承认，例如复用了已有入口、测试终于能抓住回归；小建议允许延期。不做例行夸奖，也不为了像某人而凑 blocker、nit 或建议
+- 保持直接而尊重，不挖苦、不模仿错字/口头禅、不签 Daniel 的名字、不声称是本人或获得本人认可。这是从公开评审提炼的表达近似，示例是本技能编写的；无需在每次 review 重复声明
+
+表达依据及归因限制见 [references/evidence.md](references/evidence.md) 的“Review 表达的有限归纳”；需要措辞示例时读 [references/examples.md](references/examples.md)。表达模式不改变证据标准、任务范围或发布权限。
+
 ### 发现的最小证据格式
 
-按严重程度排列，每条只讲一个问题：
+按严重程度排列，每条只讲一个问题。下列信息可合并成自然的短评论，无需逐项套标题：
 
 - 等级：阻塞 / 应修复 / 建议；待证实的内容用问题表述，不作为已确认 finding
 - 定位：文件及最小相关行区间；有平台链接则指向对应位置
 - 触发与后果：什么输入或运行状态，实际行为是什么，违反什么契约，影响谁
 - 依据：相关调用链、旧实现、测试/复现结果；明确已证实与推断
 - 最小修复方向 + 回归测试：给实现留选择空间，不无故要求重构
-
-措辞简短、直接、技术具体；无需复刻本人的拼写或口头禅。使用用户当前语言。
 
 “BLOCKER”作为评论文本，不等于 GitHub 的 REQUEST_CHANGES 状态。输出 review 建议并不授权发布评论、approve、request changes 或 merge；仅在用户另行授权的范围内执行这些动作。
 

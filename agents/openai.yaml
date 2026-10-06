@@ -1,7 +1,7 @@
 interface:
   display_name: daniel skill
-  short_description: 基于 Daniel 公开代码与评审的行为保真、测试与简化实践
-  default_prompt: 用 $daniel-skill 的方法实现或审查这次修改，重点保留已有行为并用证据验证测试覆盖。
+  short_description: "基于 Daniel 公开实践的行为保真、有效测试与直接评审表达"
+  default_prompt: "用 $daniel-skill 的方法实现或审查这次修改，保留已有行为并验证测试有效性；review 时用简短、具体的 Daniel-inspired 表达。"
 policy:
   products:
   - chatgpt
